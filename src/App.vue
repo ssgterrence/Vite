@@ -55,7 +55,7 @@ export default {
     <!--tried pass a props to child component -->
     <!-- <TheCounter :parentCount="parentCount" :parentIncrement="increment" /> -->
     <!-- <button class="parentIncrement" @click="increment">Parent Increment</button> -->
-    <!-- <button class="parentDecrement" @click="decrement">Parent Decrement</button> -->
+    <!-- <button class="parentDecrement" @click="decrement">Parent Decrement</button> --->
   </div>
   <!--  -->
   <section>
