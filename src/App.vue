@@ -59,7 +59,6 @@ export default {
     console.log(jsonRes)
   },
   watch: {
-    //watch a state change
     async thingsText(newValue, oldvalue) {
       //watch the dependency "thingsText" variable, if newValue !=oldValue, then execute function
       //new Value,old Value
@@ -88,12 +87,15 @@ export default {
   <section class="todoContainer">
     <div class="innerContainer">
       <h1>備忘錄</h1>
+      <!--  -->
       <TheFreeInptBox @handle-input-emit="handleInput" />
+      <!--  -->
       <TheDateInput :handleInput="handleInput" />
+      <!--  -->
       <TheTime :handleInput="handleInput" />
       <button class="AddBtn" @click="handleAdd">新增</button>
     </div>
-
+    <!--  -->
     <div class="todoList" v-for="todo in todoList" :key="todo.id">
       <div class="todolist-inner">
         <div>{{ todo.thing }}</div>
@@ -103,6 +105,7 @@ export default {
       <div>{{ todo.fullTime }}</div>
     </div>
   </section>
+  <!--  -->
   <section>
     <div class="res" v-for="post in jsonRes" :key="post.id">
       <div>{{ post.title }}</div>
