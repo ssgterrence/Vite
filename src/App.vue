@@ -17,7 +17,8 @@ export default {
     parentCount: 10,
     thingsText: '',
     dateTime: '',
-    timeslot: ''
+    timeslot: '',
+    jsonRes: []
   }),
 
   methods: {
@@ -35,7 +36,6 @@ export default {
       })
     },
     handleInput(event) {
-      console.log('Click', event)
       const name = event.target.name
       const value = event.target.value
       this[name] = value
@@ -45,6 +45,29 @@ export default {
         return item.id !== id
       })
       this.todoList = updatedList
+    }
+  },
+  created() {
+    const apiCall = async () => {
+      const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const res = await resp.json()
+      this.jsonRes = res
+    }
+    apiCall()
+  },
+  Mounted() {
+    console.log(jsonRes)
+  },
+  watch: {
+    //watch a state change
+    async thingsText(newValue, oldvalue) {
+      //watch the dependency "thingsText" variable, if newValue !=oldValue, then execute function
+      //new Value,old Value
+
+      const resp = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const res = await resp.json()
+      console.log(res)
+      this.jsonRes = res
     }
   }
 }
@@ -80,9 +103,19 @@ export default {
       <div>{{ todo.fullTime }}</div>
     </div>
   </section>
+  <section>
+    <div class="res" v-for="post in jsonRes" :key="post.id">
+      <div>{{ post.title }}</div>
+    </div>
+  </section>
 </template>
 
 <style scoped>
+.res {
+  text-align: center;
+  min-width: 10px;
+  border: 1px solid orange;
+}
 .todoContainer {
   margin: 4rem auto;
   width: 300px;
