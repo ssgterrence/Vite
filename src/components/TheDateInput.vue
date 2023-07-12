@@ -13,9 +13,6 @@
 <script>
 export default {
   props: {
-    dateTime: {
-      required: true
-    },
     handleInput: {
       required: true
     }

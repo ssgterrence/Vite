@@ -13,9 +13,6 @@
 <script>
 export default {
   props: {
-    timeslot: {
-      required: true
-    },
     handleInput: {
       required: true
     }

@@ -65,18 +65,14 @@ export default {
   <section class="todoContainer">
     <div class="innerContainer">
       <h1>備忘錄</h1>
-      <TheFreeInptBox
-        :thingsText="thingsText"
-        :handleInput="handleInput"
-        @handle-input="handleInput"
-      />
-      <TheDateInput :dateTime="dateTime" :handleInput="handleInput" />
-      <TheTime :timeslot="timeslot" :handleInput="handleInput" />
+      <TheFreeInptBox @handle-input-emit="handleInput" />
+      <TheDateInput :handleInput="handleInput" />
+      <TheTime :handleInput="handleInput" />
       <button class="AddBtn" @click="handleAdd">新增</button>
     </div>
 
     <div class="todoList" v-for="todo in todoList" :key="todo.id">
-      <div :style="{ display: 'flex', justifyContent: 'space-between' }">
+      <div class="todolist-inner">
         <div>{{ todo.thing }}</div>
         <div><button class="deleteBtn" @click="handleDelete(todo.id)">Delete</button></div>
       </div>
@@ -99,6 +95,10 @@ export default {
 }
 .todoList {
   margin: 15px;
+}
+.todoList-inner {
+  display: flex;
+  justify-content: space-between;
 }
 .AddBtn {
   background-color: black;

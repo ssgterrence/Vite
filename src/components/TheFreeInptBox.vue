@@ -13,13 +13,10 @@
 
 <script>
 export default {
-  data: () => ({
-    thingsText: ''
-  }),
-  emit: ['handle-input'],
+  emit: ['handle-input-emit'],
   methods: {
     handleEmitHInput(event) {
-      this.$emit('handle-input', event)
+      this.$emit('handle-input-emit', event)
     }
   }
 }
