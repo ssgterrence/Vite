@@ -35,6 +35,7 @@ export default {
       })
     },
     handleInput(event) {
+      console.log('Click', event)
       const name = event.target.name
       const value = event.target.value
       this[name] = value
@@ -64,7 +65,11 @@ export default {
   <section class="todoContainer">
     <div class="innerContainer">
       <h1>備忘錄</h1>
-      <TheFreeInptBox :thingsText="thingsText" :handleInput="handleInput" />
+      <TheFreeInptBox
+        :thingsText="thingsText"
+        :handleInput="handleInput"
+        @handle-input="handleInput"
+      />
       <TheDateInput :dateTime="dateTime" :handleInput="handleInput" />
       <TheTime :timeslot="timeslot" :handleInput="handleInput" />
       <button class="AddBtn" @click="handleAdd">新增</button>

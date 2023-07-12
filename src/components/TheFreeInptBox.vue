@@ -5,7 +5,7 @@
       name="thingsText"
       id="inputThing"
       type="text"
-      @change="handleOnChangeInput"
+      @change="handleEmitHInput"
       :style="{ width: '100%' }"
     />
   </div>
@@ -13,17 +13,13 @@
 
 <script>
 export default {
-  props: {
-    thingsText: {
-      required: true
-    },
-    handleInput: {
-      required: true
-    }
-  },
+  data: () => ({
+    thingsText: ''
+  }),
+  emit: ['handle-input'],
   methods: {
-    handleOnChangeInput(event) {
-      this.handleInput(event)
+    handleEmitHInput(event) {
+      this.$emit('handle-input', event)
     }
   }
 }
