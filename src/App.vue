@@ -1,17 +1,9 @@
 <script>
 // import TheCounter from './components/TheCounter.vue'
-import TheInput from './components/TheInput.vue'
-import TheFreeInptBox from './components/TheFreeInptBox.vue'
-import TheDateInput from './components/TheDateInput.vue'
-import TheTime from './components/TheTime.vue'
+import TheNewYorkTimes from './components/TheNewYorkTimes.vue'
 import { v4 as uuidv4 } from 'uuid'
 export default {
-  components: {
-    TheInput,
-    TheFreeInptBox,
-    TheDateInput,
-    TheTime
-  },
+  components: { TheNewYorkTimes },
   data: () => ({
     todoList: [],
     parentCount: 10,
@@ -73,44 +65,7 @@ export default {
 </script>
 
 <template>
-  <h1 class="Text">Hello World</h1>
-  <div class="parent_btn_gp">
-    <!--tried pass a props to child component -->
-    <!-- <TheCounter :parentCount="parentCount" :parentIncrement="increment" /> -->
-    <!-- <button class="parentIncrement" @click="increment">Parent Increment</button> -->
-    <!-- <button class="parentDecrement" @click="decrement">Parent Decrement</button> --->
-  </div>
-  <!--  -->
-  <section>
-    <TheInput />
-  </section>
-  <section class="todoContainer">
-    <div class="innerContainer">
-      <h1>備忘錄</h1>
-      <!--  -->
-      <TheFreeInptBox @handle-input-emit="handleInput" />
-      <!--  -->
-      <TheDateInput :handleInput="handleInput" />
-      <!--  -->
-      <TheTime :handleInput="handleInput" />
-      <button class="AddBtn" @click="handleAdd">新增</button>
-    </div>
-    <!--  -->
-    <div class="todoList" v-for="todo in todoList" :key="todo.id">
-      <div class="todolist-inner">
-        <div>{{ todo.thing }}</div>
-        <div><button class="deleteBtn" @click="handleDelete(todo.id)">Delete</button></div>
-      </div>
-
-      <div>{{ todo.fullTime }}</div>
-    </div>
-  </section>
-  <!--  -->
-  <section>
-    <div class="res" v-for="post in jsonRes" :key="post.id">
-      <div>{{ post.title }}</div>
-    </div>
-  </section>
+  <TheNewYorkTimes />
 </template>
 
 <style scoped>
