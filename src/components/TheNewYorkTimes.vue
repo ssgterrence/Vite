@@ -1,27 +1,7 @@
 <template>
   <div class="gridContainer">
-    <div class="header">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Non atque aspernatur impedit quasi
-      quidem, mollitia officiis iure, accusantium, facilis consequuntur iste magni eius numquam.
-      Quasi at doloremque, nostrum consequuntur totam sequi velit asperiores nam quam quaerat et
-      recusandae sed provident aliquam tempora, impedit neque vel magnam nobis sunt dolor
-      exercitationem facilis nemo error. Explicabo, architecto? Vel, non. Obcaecati, iure blanditiis
-      incidunt impedit, fuga quam explicabo optio nihil mollitia aliquid at, soluta dolores
-      deleniti. Nemo ad quo earum maiores dolorem, odit harum in aliquam, laborum possimus quasi at!
-      Quas temporibus beatae veniam corrupti inventore esse mollitia, dolorem incidunt praesentium
-      velit earum, dignissimos tempora debitis nemo consectetur doloribus provident tenetur!
-      Suscipit laudantium ipsa nemo animi quasi dicta fugiat temporibus, ex ipsum quam corporis
-      harum, nisi nam inventore. Dicta quaerat repudiandae odit at hic repellendus natus maiores
-      amet? Molestias a eum earum minus necessitatibus cumque dolore odit! Blanditiis harum vel
-      natus error sit laborum esse, corporis corrupti, ipsa voluptatibus iure obcaecati! Eaque
-      praesentium quae, pariatur quisquam possimus provident dicta quia ea natus fugit ratione
-      fugiat eum quod error aliquam, incidunt ex voluptas suscipit amet? Voluptate labore voluptates
-      alias molestiae repellendus facere veritatis culpa eligendi temporibus aliquam? Eius itaque,
-      impedit nisi aperiam nulla obcaecati.
-    </div>
-    <div class="navigationBar">
-      LoremipsumdolorsitametconsecteturadipisicingelitMolestiasaperiamducimusquiaLoremipsumdolorsitametconsecteturadipisicingelitMolestiasaperia
-    </div>
+    <div class="header"><TheTimesHeader /></div>
+    <div class="navigationBar"><TheNavigationBar /></div>
     <div class="hamburger">
       <div></div>
       <div></div>
@@ -41,9 +21,16 @@
   </div>
 </template>
 <script>
-export default {}
+import TheNavigationBar from './TheNavigationBar.vue'
+import TheTimesHeader from './TheTimesHeader.vue'
+export default {
+  components: {
+    TheNavigationBar,
+    TheTimesHeader
+  }
+}
 </script>
-<style>
+<style scoped>
 .gridContainer {
   gap: 10px;
   display: grid;
@@ -53,12 +40,10 @@ export default {}
 }
 .header {
   grid-column: span 12;
-  background-color: aqua;
 }
 
 .navigationBar {
   grid-column: span 12;
-  background-color: forestgreen;
 }
 .leftContent {
   grid-column: span 3;
