@@ -8,9 +8,7 @@
       <div></div>
     </div>
     <div class="leftContent">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, dolores! Sed facere aliquam
-      nobis, vel natus excepturi exercitationem eaque eum mollitia quod laborum, maxime laboriosam,
-      praesentium animi nam! Perferendis, saepe?
+      <TheLeftTextContent />
     </div>
     <div class="middleContent"></div>
     <div class="rightContent">
@@ -23,10 +21,12 @@
 <script>
 import TheNavigationBar from './TheNavigationBar.vue'
 import TheTimesHeader from './TheTimesHeader.vue'
+import TheLeftTextContent from './TheLeftTextContent.vue'
 export default {
   components: {
     TheNavigationBar,
-    TheTimesHeader
+    TheTimesHeader,
+    TheLeftTextContent
   }
 }
 </script>
@@ -41,13 +41,11 @@ export default {
 .header {
   grid-column: span 12;
 }
-
 .navigationBar {
   grid-column: span 12;
 }
 .leftContent {
   grid-column: span 3;
-  background-color: antiquewhite;
 }
 .middleContent {
   grid-column: -10/-4;
