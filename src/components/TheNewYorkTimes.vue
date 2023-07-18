@@ -10,11 +10,12 @@
     <div class="leftContent">
       <TheLeftTextContent />
     </div>
-    <div class="middleContent"></div>
+    <div class="middleContent">
+      <TheMiddleImage />
+    </div>
+
     <div class="rightContent">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis maxime corporis explicabo ipsa
-      ab dolorem veniam enim assumenda, quos magni nesciunt nemo ea sit error rerum sequi
-      exercitationem hic delectus?
+      <TheRightContent />
     </div>
   </div>
 </template>
@@ -22,11 +23,15 @@
 import TheNavigationBar from './TheNavigationBar.vue'
 import TheTimesHeader from './TheTimesHeader.vue'
 import TheLeftTextContent from './TheLeftTextContent.vue'
+import TheRightContent from './TheRightContent.vue'
+import TheMiddleImage from './TheMiddleImage.vue'
 export default {
   components: {
     TheNavigationBar,
     TheTimesHeader,
-    TheLeftTextContent
+    TheLeftTextContent,
+    TheRightContent,
+    TheMiddleImage
   }
 }
 </script>

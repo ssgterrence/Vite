@@ -35,7 +35,7 @@
         <div class="dataTimeLine"></div>
         <div class="innerContentMediaQuery">
           <div class="dataContentMediaQuery">Friday, July 14, 2023</div>
-          <div class="subscriberMediaQuery">SUBSCRIBE FOR $0.50/WEEK</div>
+          <spn class="subscriberMediaQuery">SUBSCRIBE FOR $0.50/WEEK</spn>
         </div>
         <div></div>
       </div>
@@ -162,21 +162,13 @@ export default {
   }
 
   .innerContentMediaQuery {
-    margin: 1rem 0;
-    display: flex;
-    flex-grow: auto;
-    justify-content: flex-end;
+    text-align: center;
   }
-  .subscriberMediaQuery {
-    margin-left: 15rem;
-    color: rgba(90, 162, 132);
-  }
-
   .dataTimeLine {
     margin-top: 0.5rem;
     border-bottom: 1px solid rgba(226, 226, 226);
   }
-  .dateTimeMediaQuery:nth-child(3) {
+  .dateTimeMediaQuery > div:nth-child(3) {
     margin-top: 0.5rem;
     border-bottom: 1px solid rgba(226, 226, 226);
   }

@@ -25,6 +25,14 @@
       </div>
       <p>4 MIN READ</p>
     </div>
+    <div class="dividline"></div>
+    <div class="post4">
+      <h4>
+        Ron DeSantis, Nikki Haley and Mike Pence attacked Democrats in speeches at the Christians
+        United for Israel Summit.
+      </h4>
+      <p>3 MIN READ</p>
+    </div>
   </div>
 </template>
 <script>
@@ -36,5 +44,14 @@ export default {}
 }
 .dividline {
   border-bottom: 1px solid gray;
+}
+.post4::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 </style>
