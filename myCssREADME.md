@@ -71,3 +71,33 @@ grid-template-columns: 0.5fr 2fr 0.5fr;
 .grid:has(.right:hover) {
 grid-template-columns: 0.5fr 0.5fr 2fr;
 }
+
+//////////////////////////////////////////////
+
+# Never USE repeat(X,Y) , otherwise no TRANSITION
+
+.grid {
+display: grid;
+height: 100vh;
+grid-template-columns: 1fr 1fr 0fr;
+transition: 500ms;
+gap: 2px;
+background-color: crimson;
+}
+:where(.left, .center, .right) {
+background: navajowhite;
+transition: 300ms;
+}
+:where(.left, .center, .right):hover {
+background: crimson;
+}
+
+.grid:has(.left:hover) {
+grid-template-columns: 1fr 1fr 1fr;
+}
+.grid:has(.center:hover) {
+grid-template-columns: 1fr 1fr 1fr;
+}
+.grid:has(.right:hover) {
+grid-template-columns: 1fr 1fr 1fr;
+}
