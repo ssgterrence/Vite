@@ -1,5 +1,24 @@
+<script>
+// import TheNavigationBar from './TheNavigationBar.vue'
+// import TheTimesHeader from './TheTimesHeader.vue'
+// import TheLeftTextContent from './TheLeftTextContent.vue'
+// import TheRightContent from './TheRightContent.vue'
+// import TheMiddleImage from './TheMiddleImage.vue'
+export default {
+  components: {
+    // TheNavigationBar,
+    // TheTimesHeader,
+    // TheLeftTextContent,
+    // TheRightContent,
+    // TheMiddleImage
+  },
+  data: () => ({
+    formattedMessage: '<strong>Hello</strong> <em>Vue.js</em>'
+  })
+}
+</script>
 <template>
-  <div class="gridContainer">
+  <!-- <div class="gridContainer">
     <div class="header"><TheTimesHeader /></div>
     <div class="navigationBar"><TheNavigationBar /></div>
     <div class="hamburger">
@@ -17,25 +36,31 @@
     <div class="rightContent">
       <TheRightContent />
     </div>
+  </div> -->
+  <div v-html="formattedMessage"></div>
+  <div class="grid">
+    <div class="left">Cupcakes lor</div>
+    <div class="right">
+      Muffins Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui delectus labore debitis
+      assumenda dolore voluptas maiores magni sint, laudantium enim, quos autem, dolorum quisquam
+      inventore! Nobis temporibus consequuntur quod accusantium!
+    </div>
   </div>
 </template>
-<script>
-import TheNavigationBar from './TheNavigationBar.vue'
-import TheTimesHeader from './TheTimesHeader.vue'
-import TheLeftTextContent from './TheLeftTextContent.vue'
-import TheRightContent from './TheRightContent.vue'
-import TheMiddleImage from './TheMiddleImage.vue'
-export default {
-  components: {
-    TheNavigationBar,
-    TheTimesHeader,
-    TheLeftTextContent,
-    TheRightContent,
-    TheMiddleImage
-  }
-}
-</script>
+
 <style scoped>
+.grid {
+  display: grid;
+  height: 50vh;
+  grid-template-columns: 1fr 1fr;
+  transition: 500ms;
+  gap: 2px;
+}
+.left {
+  background-color: bisque;
+}
+
+/*  */
 .gridContainer {
   gap: 10px;
   display: grid;
